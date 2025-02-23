@@ -1,0 +1,11 @@
+.order-wrapper {
+    background-color: #eeeeee;
+    height: 100vh;
+}
+
+.order-header {
+    height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}

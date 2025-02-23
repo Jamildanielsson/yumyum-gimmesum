@@ -1,0 +1,38 @@
+.menu-header {
+    height: 5rem;
+}
+
+.cart {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon {
+    font-size: 40px;
+    color: #605858;
+}
+
+.counter {
+    background-color: #EB5757;
+    color: #F4F3F1F0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+.cartbox {
+    height: 54px;
+    width: 54px;
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Menu from "../views/Menu";
-import Cart from "../views/Cart";
+import Eta from "../views/Eta";
 import Order from "../views/Order";
 import Receit from "../views/Receit";
 
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart />,
+    element: <Eta />,
   },
   {
     path: "/order",

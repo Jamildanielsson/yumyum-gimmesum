@@ -1,0 +1,19 @@
+.listitem {
+  height: 5rem;
+  list-style-type: none;
+  background-color: #605858;
+}
+
+.listitem:hover {
+  background-color: #6d6464;
+}
+
+.item-top {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredients {
+  padding: 0.5rem;
+}
