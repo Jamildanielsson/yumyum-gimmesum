@@ -1,0 +1,53 @@
+.eta-wrapper {
+    min-height: 100vh;
+    background-color: #605858;
+    color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eta-header {
+    min-height: 5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #eeeeee;
+}
+
+.icon-colorchange {
+    color: #EEEEEE !important;
+}
+
+.image {
+    max-width: 100%;
+}
+
+.main {
+    text-align: center;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.new-order {
+    width: 90%;
+    height: 4rem;
+    background-color: #353131;
+    color: #eeeeee;
+}
+
+.see-receit {
+    width: 90%;
+    height: 4rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    border: 2px solid #F4F3F1F0;
+    color: #F4F3F1F0;
+}

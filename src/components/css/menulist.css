@@ -1,0 +1,23 @@
+.menulist-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menulist-container {
+  margin: 1rem;
+  width: 95%;
+  background: #605858;
+  border-radius: 6px;
+  color: #f4f3f1f0;
+}
+
+.menu-heading {
+  padding: 0.5rem;
+}
+
+.loading {
+  padding: 0.5rem;
+}

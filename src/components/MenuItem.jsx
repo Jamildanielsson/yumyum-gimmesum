@@ -1,15 +1,28 @@
-import "./menuitem.css";
+import { useDispatch } from "react-redux";
+import "./css/menuitem.css";
+import { addToCart } from "../store/CartSlice";
 
-const MenuItem = () => {
+const MenuItem = ({ item }) => {
+  const ingredientsList = Array.isArray(item.ingredients)
+    ? item.ingredients.map((ingredient) => ingredient.trim())
+    : [];
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(item));
+  };
+
   return (
     <ul>
-      <li className="listitem">
+      <li className="listitem" onClick={handleAddToCart}>
         <div className="item-top">
-          <h3>Karlstad</h3>
-          <h3>9 SEK</h3>
+          <h2>{item.name}</h2>
+          <h2>{item.price} kr</h2>
         </div>
+        <p className="itemtype">({item.type})</p>
         <p className="ingredients">
-          kantarell, schalottenlök, morot, bladpersilja
+          {ingredientsList.length > 0 ? ingredientsList.join(", ") : ""}
         </p>
       </li>
     </ul>

@@ -1,15 +1,25 @@
-import MenuItem from './MenuItem'
-import './menulist.css'
+import MenuItem from "./MenuItem";
+import "./css/menulist.css";
 
-const MenuList = () => {
-  return (
-    <div className='menulist-wrapper'>
-        <div className='menulist-container'>
-            <h1 className='menu-heading'>MENY</h1>
-            <MenuItem />
-        </div>
-    </div>
-  )
+const MenuList = ({ items = [] }) => {
+
+const handleClick = () => {
+  console.log('Skickar beställning')
 }
 
-export default MenuList
+  return (
+    <div className="menulist-wrapper">
+      <div className="menulist-container">
+        <h1 className="menu-heading">MENY</h1>
+
+        {items.length > 0 ? (
+          items.map((item) => <MenuItem key={item.id} item={item} onClick={() => handleClick}/>)
+        ) : (
+          <p className="loading">Laddar meny...</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default MenuList;

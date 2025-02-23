@@ -1,17 +1,27 @@
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import './header.css'
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import "./css/header.css";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <div className="menu-header">
-        <div className='cart'>
-        <div className="counter">0</div>
-            <div className="cartbox">
-            <HiOutlineShoppingBag className="icon"/>
-            </div>
+      <div className="cart" onClick={() => navigate("/order")}>
+        <div className="counter">{totalItems}</div>
+        <div className="cartbox">
+          <HiOutlineShoppingBag className="icon" />
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

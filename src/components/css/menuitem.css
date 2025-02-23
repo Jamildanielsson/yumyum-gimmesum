@@ -1,5 +1,5 @@
 .listitem {
-  height: 5rem;
+  min-height: 5rem;
   list-style-type: none;
   background-color: #605858;
 }
@@ -16,4 +16,12 @@
 
 .ingredients {
   padding: 0.5rem;
+  text-transform: capitalize;
+}
+
+.itemtype {
+  padding-left: 0.5rem;
+  padding-top: 0rem;
+  text-transform: capitalize;
+  font-size: smaller;
 }

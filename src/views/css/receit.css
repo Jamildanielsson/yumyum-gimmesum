@@ -1,0 +1,53 @@
+.receit-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #605858;
+}
+
+.receit-main {
+  align-self: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  min-height: 60vh;
+  width: 90%;
+  background-color: #eeeeee;
+  justify-content: space-between;
+}
+
+.receit-img {
+  max-width: 150px;
+  align-self: center;
+}
+
+.receit-main-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.receit-footer {
+  margin: 1rem;
+}
+
+.new-order {
+  width: 100%;
+}
+
+.receit-main-footer-left {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.receit-main-footer-right {
+  padding: 0.5rem;
+  text-align: right;
+}
+
+.receit-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}

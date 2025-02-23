@@ -3,3 +3,11 @@
   padding: 0px;
   margin: 0px;
 }
+
+.button:active {
+  transform: scaleY(0.1);
+}
+
+li {
+  list-style-type: none;
+}
