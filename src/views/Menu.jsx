@@ -6,6 +6,7 @@ import "./css/menu.css";
 const Menu = () => {
   const API_KEY = "yum-7BTxHCyHhzI";
   const [menuList, setMenuList] = useState([]);
+  const [tenantId, setTenantId] = useState('');
 
   useEffect(() => {
     async function getMenu() {
