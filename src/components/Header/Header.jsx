@@ -1,7 +1,7 @@
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./css/header.css";
+import "./header.css";
 
 const Header = () => {
   const navigate = useNavigate();

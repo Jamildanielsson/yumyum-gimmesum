@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import "./css/menuitem.css";
-import { addToCart } from "../store/CartSlice";
+import "./menuitem.css";
+import { addToCart } from "../../store/CartSlice";
 
 const MenuItem = ({ item }) => {
   const ingredientsList = Array.isArray(item.ingredients)

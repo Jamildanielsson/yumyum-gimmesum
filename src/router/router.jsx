@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Menu from "../views/Menu";
-import Eta from "../views/Eta";
-import Order from "../views/Order";
-import Receit from "../views/Receit";
+import Menu from "../views/Menu/Menu";
+import Eta from "../views/Eta/Eta";
+import Order from "../views/Order/Order";
+import Receit from "../views/Receit/Receit";
 
 const router = createBrowserRouter([
   {

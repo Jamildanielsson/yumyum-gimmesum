@@ -1,5 +1,5 @@
-import MenuItem from "./MenuItem";
-import "./css/menulist.css";
+import MenuItem from "../MenuItem/MenuItem";
+import "./menulist.css";
 
 const MenuList = ({ items = [] }) => {
 

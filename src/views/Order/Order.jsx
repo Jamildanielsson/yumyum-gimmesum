@@ -3,11 +3,13 @@ import { IoReturnUpBack } from "react-icons/io5";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { removeFromCart, createOrder } from "../store/CartSlice";
-import "./css/order.css";
+import { removeFromCart, setLatestOrderId, setLatestOrderEta } from "../../store/CartSlice";
+import "./order.css";
 
 const Order = () => {
+  const API_KEY = "yum-7BTxHCyHhzI";
   const items = useSelector((state) => state.cart.items);
+  const tenantId = useSelector((state) => state.cart.tenantId);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,20 +17,46 @@ const Order = () => {
     dispatch(removeFromCart(item));
   };
 
-  const handleClick = () => {
-    if (items.length > 0) {
-      dispatch(createOrder());
+const handleCreateOrder = async () => {
+  if (items.length === 0) {
+    window.alert("Var god gör en beställning");
+    return;
+  }
+
+  try {
+    let response = await fetch(
+      `https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/${tenantId}/orders`,
+      {
+        method: "POST",
+        headers: {
+          "x-zocom": API_KEY,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: items.map(item => item.id),
+        }),
+      }
+    );
+
+    if (response.ok) {
+      let data = await response.json();
+      dispatch(setLatestOrderEta(data.order.eta));
+      dispatch(setLatestOrderId(data.order.id));
       navigate("/eta");
     } else {
-      window.alert("Var god gör en beställning");
+      const errorData = await response.json();
+      console.error("Felmeddelande:", errorData);
+      alert("Misslyckades med att skapa order: " + errorData.message);
     }
-  };
+  } catch (error) {
+    console.error("Fel vid skapande av order", error);
+  }
+};
 
   return (
     <div className="order-wrapper">
       <div>
         <div className="order-header">
-          <IoReturnUpBack className="icon" onClick={() => navigate("/")} />
           <HiOutlineShoppingBag className="icon" />
         </div>
         <ul className="order-list">
@@ -65,7 +93,7 @@ const Order = () => {
             SEK
           </h3>
         </div>
-        <button className="submit-order" onClick={handleClick}>
+        <button className="submit-order" onClick={handleCreateOrder}>
           TAKE MY MONEY
         </button>
       </div>

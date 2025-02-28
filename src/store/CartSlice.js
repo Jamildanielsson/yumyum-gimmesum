@@ -4,7 +4,9 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    orders: [],
+    tenantId: "",
+    latestOrderId: null,
+    latestOrderEta: null,
   },
   reducers: {
     addToCart(state, action) {
@@ -34,24 +36,26 @@ const cartSlice = createSlice({
     clearCart(state) {
       state.items = [];
       state.orders = [];
+      state.tenantId = "";
     },
-    createOrder(state) {
-      if (state.items.length > 0) {
-        const newOrder = {
-          id: Math.floor(Math.random() * 1000000),
-          items: [...state.items],
-          total: state.items.reduce(
-            (total, item) => total + item.price * item.quantity,
-            0
-          ),
-        };
-        state.orders.push(newOrder);
-        state.items = [];
-      }
+    setTenantId(state, action) {
+      state.tenantId = action.payload;
+    },
+    setLatestOrderId: (state, action) => {
+      state.latestOrderId = action.payload;
+    },
+    setLatestOrderEta: (state, action) => {
+      state.latestOrderEta = action.payload;
     },
   },
 });
 
-export const { addToCart, removeFromCart, clearCart, createOrder } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  clearCart,
+  setTenantId,
+  setLatestOrderId,
+  setLatestOrderEta,
+} = cartSlice.actions;
 export default cartSlice.reducer;
